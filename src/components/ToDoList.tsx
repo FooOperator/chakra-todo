@@ -46,7 +46,7 @@ const ToDoList: React.FC = () => {
                 {content.map((todo, indexJ) => (
                   <ListItem w="100%">
                     <ToDoItem key={indexJ} todo={todo} />
-                    {index < content.length - 1 && <Divider />}
+                    {indexJ < content.length - 1 && <Divider />}
                   </ListItem>
                 ))}
               </List>
