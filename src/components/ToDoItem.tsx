@@ -28,7 +28,7 @@ const ToDoItem: React.FC<ToDoItemProps> = ({ todo }) => {
       <Text
         overflow="hidden"
         whiteSpace={"nowrap"}
-        as={todo.done ? "strike" : undefined}
+        as={todo.done ? "s" : undefined}
         fontSize="xl"
         mr="auto"
       >
