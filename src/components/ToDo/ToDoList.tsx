@@ -97,7 +97,7 @@ const ToDoList: React.FC = () => {
 														/>
 													</Text>
 												</Flex>
-												{index <
+												{indexJ <
 													content.length -
 														1 && (
 													<Divider />
