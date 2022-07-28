@@ -40,11 +40,14 @@ const EditTitle: React.FC<EditTitleProps> = ({ todo }) => {
 			title: `Renamed '${todo.title}' to '${newToDo}'`,
 			duration: 1500,
 		});
-		setNewToDo("");
-		onClose();
+		handleOnClose();
 	};
 
 	const handleChange = (e: any) => setNewToDo(e.currentTarget.value);
+	const handleOnClose = () => {
+		setNewToDo("");
+		onClose();
+	};
 
 	return (
 		<>
@@ -57,7 +60,7 @@ const EditTitle: React.FC<EditTitleProps> = ({ todo }) => {
 			<Modal
 				initialFocusRef={initialFocusRef}
 				isOpen={isOpen}
-				onClose={onClose}>
+				onClose={handleOnClose}>
 				<ModalOverlay />
 				<ModalContent backgroundColor={modalBg}>
 					<ModalHeader>Editing Title</ModalHeader>
@@ -76,7 +79,7 @@ const EditTitle: React.FC<EditTitleProps> = ({ todo }) => {
 						<Button
 							colorScheme="blue"
 							mr={3}
-							onClick={onClose}>
+							onClick={handleOnClose}>
 							Cancel
 						</Button>
 						<Button
