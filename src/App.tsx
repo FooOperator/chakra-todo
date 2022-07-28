@@ -5,11 +5,13 @@ import {
   Heading,
   Link,
   LightMode,
+  Box,
+  Button,
 } from "@chakra-ui/react";
 import React from "react";
-import DarkModeSwitch from "./components/DarkModeSwitch";
-import ToDoForm from "./components/ToDoForm";
-import ToDoList from "./components/ToDoList";
+import { Helmet } from "react-helmet";
+import { DarkModeSwitch } from "./components";
+import { ToDoList, ToDoForm } from "./components/ToDo";
 
 const App = () => {
   return <Layout />;
@@ -18,8 +20,16 @@ const App = () => {
 const Layout: React.FC = () => {
   return (
     <Flex direction={"column"} h="100%" alignItems={"center"}>
+      <Helmet>
+        <title>Chakra To-Do</title>
+      </Helmet>
+      <Flex as="nav" w="100%" p={2} justifyContent="space-between">
+        <Box ml="auto">
+          <DarkModeSwitch />
+        </Box>
+      </Flex>
       <Flex
-        mt="10%"
+        mt="4%"
         as="main"
         alignSelf={"center"}
         alignItems="center"
@@ -28,10 +38,7 @@ const Layout: React.FC = () => {
         h="100%"
         gap={3}
       >
-        <Flex align="center" gap={4}>
-          <Heading size="4xl">Chakra To-Do</Heading>
-          <DarkModeSwitch />
-        </Flex>
+        <Heading size="4xl">Chakra To-Do</Heading>
         <Text fontSize={"xl"}>
           Created by{" "}
           <LightMode>
@@ -47,23 +54,7 @@ const Layout: React.FC = () => {
         <Container w="50%">
           <ToDoForm />
         </Container>
-        <Container
-          sx={{
-            "&::-webkit-scrollbar": {
-              width: "16px",
-              borderRadius: "8px",
-              backgroundColor: `gray.100`,
-            },
-            "&::-webkit-scrollbar-thumb": {
-              backgroundColor: `red.600`,
-              borderRadius: "10px",
-            },
-          }}
-          p={2}
-          minH="50%"
-          maxH="50%"
-          overflow={"auto"}
-        >
+        <Container p={1}>
           <ToDoList />
         </Container>
       </Flex>
