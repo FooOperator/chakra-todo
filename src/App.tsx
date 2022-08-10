@@ -21,7 +21,7 @@ const Layout: React.FC = () => {
   return (
     <Flex direction={"column"} h="100%" alignItems={"center"}>
       <Helmet>
-        <title>Chakra To-Do</title>
+        <title>To-do Masterpiece</title>
       </Helmet>
       <Flex as="nav" w="100%" p={2} justifyContent="space-between">
         <Box ml="auto">
@@ -38,7 +38,7 @@ const Layout: React.FC = () => {
         h="100%"
         gap={3}
       >
-        <Heading size="4xl">Chakra To-Do</Heading>
+        <Heading size="4xl">To-do Masterpiece</Heading>
         <Text fontSize={"xl"}>
           Created by{" "}
           <LightMode>
